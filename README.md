@@ -4,8 +4,8 @@ This is the Spring 2023 Brown Applied Computing software project. We are demonst
 
 # Plan
 Our plan is not set in stone. Edit the [Google doc plan](https://docs.google.com/document/d/1_AmFrudoSJa6s30vHYEYI6L1M-KW2zWXDtEwJlGhOCQ/edit?usp=sharing) as we try different things and come up with new ideas. For now, our general plan is as follows.
-1. Implement a simplified DSA signature scheme in Python.
-2. Implement a voice deepfake or other AI deepfake in Python.
+1. ~~Implement a simplified DSA signature scheme in Python.~~ (Done! See `ai-security/secure.py`.)
+2. Adapt a voice deepfake or other AI deepfake in Python.
 3. Implement a scheme whereby entities can securely sign real recordings and AI-generated recordings.
 4. Create a fun educational workshop that teaches how these deepfakes work and possible solutions to prevent them.
 5. Run the workshop open to all students.
