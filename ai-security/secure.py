@@ -30,7 +30,7 @@ def time_exp_log(base, exp):
     exp_time = (time.time()-start_exp)*1000000
     start_log = time.time()
     do_log = slow_log(base, do_pow)
-    log_time = (time.time()-start_exp)*1000000
+    log_time = (time.time()-start_log)*1000000
     assert do_log == exp
 
     print("Exponentiation time: %f µs" % (exp_time))
@@ -74,8 +74,7 @@ def dsa_sign(message, sk):
 print(dsa_sign("test", dsa_keygen()[0]))
 
 def dsa_verify(message, signature, vk):
-    r = signature[0]
-    s = signature[1]
+    r, s = signature
     w = pow(s, -1, q)
     u1 = (hash(message) * w) % q
     u2 = (r * w) % q
