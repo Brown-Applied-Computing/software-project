@@ -41,10 +41,10 @@ time_exp_log(4, 500)
 time_exp_log(2, 1000)
 
 import hashlib
-def hash_str(str):
-    return hashlib.sha256(str.encode('utf-8')).hexdigest()
+def hash_str(s):
+    return hashlib.sha256(s.encode('utf-8')).hexdigest()
 def hash(x):
-    return int(hash_str(str), 16)
+    return int(hash_str(x), 16)
 
 print(hash_str("this is a test of SHA-256"))
 print(hash_str("hi"))
@@ -55,12 +55,14 @@ print(hash_str("hi"))
 h = 2
 g = pow(h, (p-1)//q, p)
 dsa_params = (p, q, g)
+print("g",g)
 
 import random
 def dsa_keygen():
    sk = random.randint(1, q-1) # secret key
    vk = pow(g, sk, p)
    return (sk, vk)
+print("kg",dsa_keygen())
 
 def dsa_sign(message, sk):
     k = random.randint(1, q-1)
@@ -71,7 +73,7 @@ def dsa_sign(message, sk):
         return dsa_sign(message, sk)
     return (r, s)
 
-print(dsa_sign("test", dsa_keygen()[0]))
+print("sign",dsa_sign("test", dsa_keygen()[0]))
 
 def dsa_verify(message, signature, vk):
     r, s = signature
